@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - contact</title>
+  <link rel="stylesheet" href="/font/font.css">
+  <link rel="stylesheet" href="/contact/contact.css">
+</head>
+<body>
+  <nav class="nav">
+    <ul class="nav__links">
+      <li class="nav__item"><a class="nav__link" href="/home/home.html">Home</a></li>
+      <li class="nav__item"><a class="nav__link" href="/projects/projects.html">Projects</a></li>
+      <li class="nav__item"><a class="nav__link" href="/contact/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
+  
+  
+  <section class="contact" id="contact">
+    <form class="form">
+      <h1 class="form__heading">Get in touch</h1>
+      <label for="name" class="form__label">Name</label>
+      <input type="text" class="form__input" id="name" required />
+      <label for="email" class="form__label">Email</label>
+      <input type="email" class="form__input" id="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" inputmode="email" required />
+      <label for="message" class="form__label">Message</label>
+      <textarea type="tel" class="form__message" id="message" required></textarea>
+      <button class="btn form__btn" type="submit" data-text="submit">Submit</button>
+    </form>
+  </section>
+
+  <div class="cursor cursor--small" aria-hidden="true"></div>
+  <div class="cursor cursor--big" aria-hidden="true"></div>
+
+  <script src="/contact/contact.js"></script>
+</body>
+</html>
