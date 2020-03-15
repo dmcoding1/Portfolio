@@ -4,7 +4,7 @@ const cors = require('cors');
 module.exports = app => {
   app.use(cors());
 
-  app.post("/message", async (req, res, next) => {
+  app.post("/message", async (req, res) => {
 
     const { name, email, message } = req.body;
 
