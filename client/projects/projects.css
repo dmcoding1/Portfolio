@@ -16,6 +16,15 @@ body {
   overflow: hidden;
 }
 
+body.loading {
+  background: black;
+}
+
+body.loading * {
+  opacity: 0;
+  visibility: hidden;
+}
+
 ::-moz-selection {
   background-color: #6229BF;
 }
@@ -118,6 +127,24 @@ body {
   z-index: 1;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: grow .8s ease forwards;
+          animation: grow .8s ease forwards;
+}
+
+@-webkit-keyframes grow {
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .projects__project {
@@ -134,7 +161,6 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  background-color: lightblue;
   border-radius: 20px;
   font-size: 5rem;
   color: black;
@@ -143,6 +169,7 @@ body {
   z-index: 1;
   overflow: hidden;
   cursor: pointer;
+  outline: none;
   -webkit-transition: -webkit-transform .8s ease;
   transition: -webkit-transform .8s ease;
   transition: transform .8s ease;
@@ -189,7 +216,7 @@ body {
   opacity: 1;
 }
 
-.projects__project:hover::before {
+.projects__project:hover::before, .projects__project:focus::before {
   opacity: 0;
 }
 
@@ -201,13 +228,20 @@ body {
   opacity: 0;
 }
 
-.projects__project.active:hover::before {
+.projects__project.active:hover::before, .projects__project.active:focus::before, .projects__project.active:focus-within::before {
   opacity: 1;
 }
 
-.projects__project.active:hover .card {
-  -webkit-transform: perspective(2000px) translateY(0) rotateZ(0deg);
-          transform: perspective(2000px) translateY(0) rotateZ(0deg);
+.projects__project.active .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.projects__project.active:hover .card, .projects__project.active:focus .card, .projects__project.active:focus-within .card {
+  outline: none;
+  -webkit-transform: perspective(2000px) translateY(0) rotateX(0deg);
+          transform: perspective(2000px) translateY(0) rotateX(0deg);
 }
 
 .projects__btn {
@@ -377,6 +411,13 @@ body {
           transform: scaleX(0);
 }
 
+.nav__link:focus::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
 .nav__link::after {
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
@@ -494,9 +535,7 @@ body {
   width: 100%;
   height: 70%;
   padding: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -526,13 +565,14 @@ body {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  outline: none;
   -webkit-transition: opacity .2s ease, -webkit-transform .2s ease;
   transition: opacity .2s ease, -webkit-transform .2s ease;
   transition: transform .2s ease, opacity .2s ease;
   transition: transform .2s ease, opacity .2s ease, -webkit-transform .2s ease;
 }
 
-.card a:hover {
+.card a:hover, .card a:focus {
   -webkit-transform: translateY(-5%);
           transform: translateY(-5%);
   opacity: .8;
@@ -565,13 +605,14 @@ body {
   display: inline-block;
   width: 4rem;
   height: 4rem;
+  outline: none;
   -webkit-transition: -webkit-transform .3s ease;
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
-.card__links a:hover {
+.card__links a:hover, .card__links a:focus {
   -webkit-transform: translateY(-0.5rem);
           transform: translateY(-0.5rem);
 }

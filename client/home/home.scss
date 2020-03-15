@@ -122,6 +122,11 @@ $cursor-color: purple;
     &::before {
       transform: scaleX(0); 
     }
+
+    &:focus::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
     
     &::after {
       transform: scaleY(0); 
@@ -244,6 +249,7 @@ $cursor-color: purple;
   font-family: inherit;
   font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
   letter-spacing: 1px;
   z-index: 1;
   user-select: none;  

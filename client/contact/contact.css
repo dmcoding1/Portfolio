@@ -152,6 +152,13 @@ body {
           transform: scaleX(0);
 }
 
+.nav__link:focus::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
 .nav__link::after {
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
@@ -282,6 +289,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   opacity: 0;
+  outline: none;
   -webkit-animation: appear .5s .8s ease-out forwards;
           animation: appear .5s .8s ease-out forwards;
 }
@@ -306,7 +314,7 @@ body {
           transform: translateX(-90%);
 }
 
-.form__btn:hover::before {
+.form__btn:hover::before, .form__btn:focus::before {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }

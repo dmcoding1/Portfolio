@@ -122,6 +122,11 @@ $cursor-color: purple;
     &::before {
       transform: scaleX(0); 
     }
+
+    &:focus::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
     
     &::after {
       transform: scaleY(0); 
@@ -226,6 +231,7 @@ $cursor-color: purple;
     justify-content: center;
     align-items: center;
     opacity: 0;
+    outline: none;
     animation: appear .5s .8s ease-out forwards;
   
     &::before {
@@ -244,7 +250,7 @@ $cursor-color: purple;
       transform: translateX(-90%);
     }
 
-    &:hover::before {
+    &:hover::before, &:focus::before {
       transform: translateX(0);
     }
   }

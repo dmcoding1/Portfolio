@@ -240,6 +240,11 @@ window.onload = () => {
   const carousel = document.querySelector(".projects__carousel-wrapper");
 
   carousel.addEventListener("click", swapProjects);
+  carousel.addEventListener("keyup", e => {
+    if (e.key === "Enter") {
+      swapProjects(e);
+    }
+  });
 
   [...projects].forEach(project => {
     project.addEventListener("transitionend", () => {
@@ -260,4 +265,7 @@ window.onload = () => {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
+  document.body.classList.remove("loading");
+
 };

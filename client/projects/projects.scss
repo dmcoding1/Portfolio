@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  //outline: 1px solid red;
   cursor: none;
 }
 
@@ -14,6 +13,15 @@ html {
 body {
   font-family: 'Raleway', sans-serif;
   overflow: hidden;
+
+  &.loading {
+    background: black;
+
+    * {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 }
 
 $primary-color: #6229BF;
@@ -90,6 +98,14 @@ $cursor-color: purple;
     height: 100%;
     z-index: 1;
     transform-style: preserve-3d;
+    transform: scale(0);
+    animation: grow .8s ease forwards;
+
+    @keyframes grow {
+      100% {
+        transform: scale(1);
+      }
+    }
   }
   
   &__project {
@@ -102,14 +118,14 @@ $cursor-color: purple;
     min-height: 200px;
     display: flex;
     align-items: flex-end;
-    background-color: lightblue;
     border-radius: 20px;
     font-size: 5rem;
     color: black;
     box-shadow: 0 0 10px #652EC740;
     z-index: 1;
     overflow: hidden;
-    cursor: pointer;    
+    cursor: pointer;
+    outline: none;    
     transition: transform .8s ease;
     
     
@@ -150,7 +166,7 @@ $cursor-color: purple;
       opacity: 1;
     } 
     
-    &:hover::before {
+    &:hover::before, &:focus::before {
       opacity: 0;
     }
     
@@ -162,15 +178,20 @@ $cursor-color: purple;
         opacity: 0;
       }
       
-      &:hover {
+      &:hover, &:focus, &:focus-within {
         
         &::before {
           opacity: 1;
         }
       }
 
-      &:hover .card {
-         transform: perspective(2000px) translateY(0) rotateZ(0deg);
+      .card {
+        display: flex;
+      }
+
+      &:hover .card, &:focus .card, &:focus-within .card {
+        outline: none;
+        transform: perspective(2000px) translateY(0) rotateX(0deg);
       }
     }
   }
@@ -315,6 +336,11 @@ $cursor-color: purple;
     &::before {
       transform: scaleX(0); 
     }
+
+    &:focus::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
     
     &::after {
       transform: scaleY(0); 
@@ -396,7 +422,7 @@ $cursor-color: purple;
   width: 100%;
   height: 70%;
   padding: 2rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   overflow: hidden;
@@ -411,9 +437,10 @@ $cursor-color: purple;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    outline: none;
     transition: transform .2s ease, opacity .2s ease;
     
-    &:hover {
+    &:hover, &:focus {
       transform: translateY(-5%);
       opacity: .8;
     }
@@ -441,9 +468,10 @@ $cursor-color: purple;
       display: inline-block;
       width: 4rem;
       height: 4rem;
+      outline: none;
       transition: transform .3s ease;
       
-      &:hover {
+      &:hover, &:focus {
         transform: translateY(-.5rem);
       }
 
@@ -588,4 +616,3 @@ $cursor-color: purple;
   }
   
 }
-
