@@ -84,9 +84,15 @@ window.onload = () => {
   ];
 
   const rightBtn = document.getElementById("right");
-  rightBtn.addEventListener("click", () => handleTranslate());
+  rightBtn.addEventListener("click", handleTranslate);
+  window.addEventListener("keyup", e => {
+    if (e.key === "ArrowRight") handleTranslate();
+  })
   const leftBtn = document.getElementById("left");
   leftBtn.addEventListener("click", e => handleTranslate(e, "left"));
+  window.addEventListener("keyup", e => {
+    if (e.key === "ArrowLeft") handleTranslate(e, "left");
+  })
 
   function handleTranslate(e, direction = "right") {
     let vergingIndex = direction === "left" ? 0 : 3;

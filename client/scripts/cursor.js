@@ -1,6 +1,8 @@
 
   // CURSOR
 
+  window.ondragstart = () => false;
+
   const cursors = [...document.getElementsByClassName("cursor")];
   const [smallCursor, bigCursor] = cursors;
 
