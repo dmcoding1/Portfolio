@@ -1,0 +1,36 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  overflow: hidden;
+
+  &.loading {
+    background: black;
+
+    * {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+$primary-color: #6229BF;
+$neon-color: #DE38C8;
+$neon-shadow-color: #652EC7;
+$text-color: #FFC5EA;
+$bg-color: #07001f;
+$cursor-color: purple;
+
+::selection {
+  background-color: $primary-color;
+}
