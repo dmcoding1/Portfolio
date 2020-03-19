@@ -1,3 +1,8 @@
+@import "../styles/variables";
+@import '../styles/global';
+@import '../styles/nav';
+@import '../styles/cursor';
+
 .projects {
   width: 100%;
   max-height: 100vh;
@@ -72,7 +77,8 @@
     }
     
     &:nth-child(4) {
-      background: url("https://images.unsplash.com/photo-1455894127589-22f75500213a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80") no-repeat center center/cover;
+      //background: url("https://images.unsplash.com/photo-1455894127589-22f75500213a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80") no-repeat center center/cover;
+      background: url(/images/scales.jpg) no-repeat center center/cover;
       transform: perspective(400px) translate3d(-100%, -225%, -400px);
     }
 

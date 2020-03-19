@@ -1,3 +1,5 @@
+@use "variables";
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -24,13 +26,16 @@ body {
   }
 }
 
-$primary-color: #6229BF;
-$neon-color: #DE38C8;
-$neon-shadow-color: #652EC7;
-$text-color: #FFC5EA;
-$bg-color: #07001f;
-$cursor-color: purple;
 
 ::selection {
   background-color: $primary-color;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+    }
+  }
