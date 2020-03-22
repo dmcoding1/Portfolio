@@ -3,7 +3,7 @@ window.onload = () => {
   const letterContainer = document.querySelector(".header__title");
   const letters = document.querySelectorAll(".header__letter");
   
-  letterContainer.addEventListener("click", e => {
+  document.body.addEventListener("click", e => {
     showBigLetter(e);
   });
 

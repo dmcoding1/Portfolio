@@ -10,7 +10,7 @@ module.exports = app => {
 
     const { name, email, message, captcha } = req.body;
 
-    if(!captcha){
+    if(!captcha) {
       console.log("err");
       return res.json({"success": false, "msg": "Capctha is not checked"});
     }

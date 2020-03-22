@@ -62,23 +62,22 @@
     
     
     &:first-child {
-      background: url("https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") no-repeat center center/cover;
+      background: url(/images/quotes.jpg) no-repeat center top/cover;
       transform: perspective(400px) translate3d(-150%, -125%, -200px);
     }
     
     &:nth-child(2) {
-      background: url("https://images.unsplash.com/photo-1481487196290-c152efe083f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1430&q=80") no-repeat center center/cover;
+      background: url(/images/restaurant.jpg) no-repeat center center/cover;
       transform: perspective(400px) translate3d(-50%, -50%, 0);
     }
     
     &:nth-child(3) {
-      background: url("https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") no-repeat center center/cover;
+      background: url(/images/card-generator.jpg) no-repeat center center/cover;
       transform: perspective(400px) translate3d(0, -125%, -200px);
     }
     
     &:nth-child(4) {
-      //background: url("https://images.unsplash.com/photo-1455894127589-22f75500213a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80") no-repeat center center/cover;
-      background: url(/images/scales.jpg) no-repeat center center/cover;
+      background: url(/images/scales.jpg) no-repeat center top/cover;
       transform: perspective(400px) translate3d(-100%, -225%, -400px);
     }
 
