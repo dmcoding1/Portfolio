@@ -31,7 +31,7 @@
     z-index: 1;
     transform-style: preserve-3d;
     transform: scale(0);
-    animation: grow .8s ease forwards;
+    animation: grow .5s ease forwards;
 
     @keyframes grow {
       100% {
@@ -146,6 +146,18 @@
     
     &--left {      
       left: 0;
+      opacity: 0;
+      animation: slide-in-left .3s .4s ease forwards;
+
+      @keyframes slide-in-left {
+        0% {
+          transform: translateX(-200%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
       
       &::before {
         content: "<";
@@ -178,6 +190,18 @@
     
     &--right {      
       right: 0;
+      opacity: 0;
+      animation: slide-in-right .3s .4s ease forwards;
+
+      @keyframes slide-in-right {
+        0% {
+          transform: translateX(200%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
       
       &::after {
         content: ">";
@@ -218,13 +242,20 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  opacity: 0;
+  animation: appear 1s .7s ease forwards;
+
+  @keyframes appear {
+    100% {
+      opacity: 1;
+    }
+  }
  
   &__item {
     padding: 1rem;
     color: $text-color;
     font-size: 2rem;
     font-weight: 900;
-    //text-transform: uppercase;
     color: #00FBBF;
     filter: blur(2px);
     transition: filter .5s ease-out;    
@@ -403,7 +434,6 @@
       padding: 2rem;
       position: static;
       display: block;
-      //overflow-x: scroll;
       height: 80%;
       display: flex;
       align-items: center;

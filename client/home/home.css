@@ -268,7 +268,6 @@ body.loading * {
   font-size: 30rem;
   text-transform: uppercase;
   line-height: 1;
-  background: url("https://i.ibb.co/X5BTXCZ/photo-1470219556762-1771e7f9427d-1.jpg") fixed no-repeat center center/cover;
   background: url("/images/header.jpg") fixed no-repeat center center/cover;
   background-clip: text;
   -webkit-background-clip: text;
