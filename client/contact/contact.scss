@@ -71,6 +71,10 @@
       outline: 2px solid $primary-color;
     }
   }
+
+  &__message {
+    resize: none;
+  }
   
   &__btn {
     width: 12rem;
@@ -181,6 +185,18 @@
     &__links {
       width: 100%;
     }
+
+    &__social-links {
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      margin-top: 1rem;      
+      width: 100%;
+    }
+
+    &__social-link {
+      font-size: 1.8rem;
+    }
     
     &__item {
       border: 3px solid $primary-color;
@@ -196,6 +212,7 @@
     
     &__link {
       line-height: 3;
+      font-size: 1.4rem;
     }
   }
   

@@ -43,11 +43,6 @@ module.exports = app => {
         res.sendStatus(500);
         console.error(err);
       }
-
-    })
-
-    
+    }) 
   });
-
-  
 };

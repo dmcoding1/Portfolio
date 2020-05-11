@@ -1,4 +1,8 @@
 window.onload = () => {
+  if (window.innerWidth <= 700) {
+    document.body.classList.remove("loading");
+    return;
+  }
 
   const toolsContainer = document.querySelector(".tools");
 
@@ -203,4 +207,5 @@ window.onload = () => {
   }
 
   document.body.classList.remove("loading");
+
 };

@@ -17,7 +17,7 @@ window.onload = () => {
     [...letters].forEach(letter =>
       letter.classList.remove("header__letter--big")
     );
-    if (e.target.tagName === "SPAN")
+    if (e.target.classList.contains("header__letter"))
       e.target.classList.add("header__letter--big");
   }
 

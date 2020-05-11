@@ -204,11 +204,8 @@
       background-position: center top;
       font-size: 25rem;
     }
-  }
-  
+  }  
 }
-
-
 
 @media (max-width: 700px) {
   html {
@@ -218,6 +215,7 @@
   
   body {
     width: 100%;
+    max-height: 100%;
   }
   
   .nav {
@@ -229,6 +227,18 @@
     
     &__links {
       width: 100%;
+    }
+
+    &__social-links {
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      margin-top: 1rem;      
+      width: 100%;
+    }
+
+    &__social-link {
+      font-size: 1.8rem;
     }
     
     &__item {
@@ -245,6 +255,7 @@
     
     &__link {
       line-height: 3;
+      font-size: 1.4rem;
     }
   }
   
@@ -269,19 +280,17 @@
     }
     
     &__subtitle {
-      margin-bottom: 10rem;
+      margin-bottom: 5rem;
     }
   }
   
   .btn {
     margin: 0;
-  }
-  
-  
+  } 
 }
 
 @media (max-width: 400px) {
-   .header {
+  .header {
     padding: 3rem;
     align-items: flex-start;
     
@@ -289,4 +298,10 @@
       font-size: 8.5rem;
     } 
   }  
+
+  .nav {
+    &__link {
+      font-size: 1.2rem;
+    }
+  }
 }
