@@ -1,7 +1,10 @@
 window.onload = () => {
   
   const letterContainer = document.querySelector(".header__title");
-  const letters = document.querySelectorAll(".header__letter");
+
+  divideTextInNode(letterContainer);
+
+  const letters = [...document.querySelectorAll(".header__letter")];
   
   document.body.addEventListener("click", e => {
     showBigLetter(e);
@@ -13,8 +16,24 @@ window.onload = () => {
     }
   });
 
+  function divideTextInNode(htmlNode) {
+    const headerTitleChars = htmlNode.textContent.trim().split("");
+
+    const headerTitleHtml = headerTitleChars.reduce((html, character) => {
+      if (/[A-Za-z]/.test(character)) {
+        return html += `<span class="header__letter" data-content=${character}>${character}</span
+        >`;
+      } else {
+        return html += character;
+      }
+    }, "")
+
+    htmlNode.textContent = "";
+    htmlNode.innerHTML = headerTitleHtml;
+  }
+
   function showBigLetter(e) {
-    [...letters].forEach(letter =>
+    letters.forEach(letter =>
       letter.classList.remove("header__letter--big")
     );
     if (e.target.classList.contains("header__letter"))
