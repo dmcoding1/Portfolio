@@ -25,7 +25,8 @@ function verify(data) {
     .then(token => {
       data.captcha = token;
       sendMessage(data);
-    });
+    })
+    .catch(err => console.error(err));
 }
 
 function sendMessage(data) {

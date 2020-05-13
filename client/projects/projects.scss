@@ -54,32 +54,13 @@
     font-size: 5rem;
     color: black;
     box-shadow: 0 0 10px #652EC740;
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 1;
     overflow: hidden;
     cursor: pointer;
     outline: none;    
     transition: transform .8s ease;
-    
-    
-    &:first-child {
-      background: url(/images/quotes.jpg) no-repeat center top/cover;
-      transform: perspective(400px) translate3d(-150%, -125%, -200px);
-    }
-    
-    &:nth-child(2) {
-      background: url(/images/restaurant.jpg) no-repeat center center/cover;
-      transform: perspective(400px) translate3d(-50%, -50%, 0);
-    }
-    
-    &:nth-child(3) {
-      background: url(/images/card-generator.jpg) no-repeat center center/cover;
-      transform: perspective(400px) translate3d(0, -125%, -200px);
-    }
-    
-    &:nth-child(4) {
-      background: url(/images/scales.jpg) no-repeat center top/cover;
-      transform: perspective(400px) translate3d(-100%, -225%, -400px);
-    }    
     
     &::before {
       content: "";
