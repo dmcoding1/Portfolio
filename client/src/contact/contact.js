@@ -1,3 +1,10 @@
+import "../scripts/cursor";
+import "../scripts/nav";
+
+import "./contact.scss";
+import "../font/font.scss";
+
+
 window.onload = () => {
   const name = document.getElementById("name");
   const email = document.getElementById("email");

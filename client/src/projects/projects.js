@@ -1,3 +1,10 @@
+import "../scripts/cursor";
+import "../scripts/nav";
+import "../scripts/focus-within-polyfill";
+
+import "./projects.scss";
+import "../font/font.scss";
+
 window.onload = () => {
   // PROJECTS
 
@@ -8,7 +15,7 @@ window.onload = () => {
       label: "Go to Fresh Italian Restaurant Website",
       description:
         "Restaurant website with table reservation module. Scroll animations made with Intersection Observer API.",
-      imageUrl: "/images/restaurant.jpg",
+      imageUrl: "../images/restaurant.jpg",
       link: "#",
       githubLink: "#",
       figmaLink: "#",
@@ -30,7 +37,7 @@ window.onload = () => {
       label: "Go to Christmas Cards Generator",
       description:
         "Card generator with 25 palettes and 10 font pairs to choose from. Images are provided by Unsplash API. Card download and custom image upload features.",
-      imageUrl: "/images/card-generator.jpg",
+      imageUrl: "../images/card-generator.jpg",
       link: "#",
       githubLink: "#",
       figmaLink: "#",
@@ -52,7 +59,7 @@ window.onload = () => {
       label: "Go to Music Scales Learning App",
       description:
         "App displays notes, chords with keyboard and guitar sounds of selected music scale.",
-      imageUrl: "/images/scales.jpg",
+      imageUrl: "../images/scales.jpg",
       link: "#",
       githubLink: "#",
       tools: ["html5", "css3", "sass", "javascript"],
@@ -63,7 +70,7 @@ window.onload = () => {
       label: "Go to Quotes App",
       description:
         "App displays random quote from database, with search quote by author and add quote features.",
-      imageUrl: "/images/quotes.jpg",
+      imageUrl: "../images/quotes.jpg",
       link: "#",
       githubLink: "#",
       figmaLink: "#",

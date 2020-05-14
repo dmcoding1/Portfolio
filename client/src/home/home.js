@@ -1,3 +1,10 @@
+import "../scripts/cursor";
+import "../scripts/nav";
+
+import "./home.scss";
+import "../font/font.scss";
+
+
 window.onload = () => {
   const letterContainer = document.querySelector(".header__title");
 
