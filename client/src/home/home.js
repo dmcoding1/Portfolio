@@ -1,9 +1,9 @@
 import "../scripts/cursor";
 import "../scripts/nav";
+import registerSW from "../scripts/swRegistration";
 
 import "./home.scss";
 import "../font/font.scss";
-
 
 window.onload = () => {
   const letterContainer = document.querySelector(".header__title");
@@ -35,16 +35,21 @@ window.onload = () => {
   }
 
   function divideTextInNode(htmlNode) {
-    const headerTitleChars = htmlNode.textContent.trim().split("");
+    const headerTitleWords = htmlNode.textContent.trim().split(" ");
 
-    const headerTitleHtml = headerTitleChars.reduce((html, character) => {
-      if (/[A-Za-z]/.test(character)) {
-        return (html += `<span class="header__letter" data-content=${character}>${character}</span
-        >`);
-      } else {
-        return (html += character);
-      }
-    }, "");
+    const headerTitleHtml = headerTitleWords.map((word) => {
+      const letters = word.split("");
+
+      const wordHTML = letters.reduce((html, character) => {
+        if (/[A-Za-z]/.test(character)) {
+          return (html += `<span class="header__letter" data-content=${character}>${character}</span>`);
+        } else {
+          return (html += character);
+        }
+      }, "");
+
+      return `<span class="header__word">${wordHTML}</span>`
+    }).join(" ");
 
     htmlNode.textContent = "";
     htmlNode.innerHTML = headerTitleHtml;
@@ -56,3 +61,5 @@ window.onload = () => {
       e.target.classList.add("header__letter--big");
   }
 };
+
+registerSW();

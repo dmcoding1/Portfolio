@@ -21,6 +21,11 @@
     animation: slide 1s linear;
     font-weight: 900;
     font-size: 10rem;
+    text-align: center;
+  }
+
+  &__word {
+    display: inline-block;
   }
   
   &__subtitle {
@@ -44,7 +49,7 @@
       font-size: 30rem;
       text-transform: uppercase;
       line-height: 1;
-      background: url("../images/header.jpg") fixed no-repeat center center/cover;
+      background: url("/images/header.jpg") fixed no-repeat center center/cover;
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -270,6 +275,7 @@
     &__title {
       margin-bottom: 3rem;
       padding: 0;
+      text-align: left;
     }    
     
     &__letter {
