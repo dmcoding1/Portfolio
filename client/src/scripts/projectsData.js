@@ -45,14 +45,14 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "Music Scales Learning App",
-    label: "Go to Music Scales Learning App",
+    title: "Musical Scales Learning App",
+    label: "Go to Musical Scales Learning App",
     description:
-      "App displays notes, chords with keyboard and guitar sounds of selected music scale.",
+      "Progressive Web App that displays notes, chords with keyboard and guitar sounds of selected music scale.",
     imageUrl: "../images/scales.jpg",
     link: "#",
     githubLink: "#",
-    tools: ["html5", "css3", "sass", "javascript"],
+    tools: ["html5", "css3", "sass", "javascript", "webpack", "workbox"]
   },
   {
     id: 4,

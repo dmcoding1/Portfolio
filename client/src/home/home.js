@@ -12,6 +12,8 @@ window.onload = () => {
 
   const letters = [...document.querySelectorAll(".header__letter")];
 
+  letters[0].classList.add("header__letter--big");
+
   document.body.addEventListener("click", (e) => {
     showBigLetter(e);
   });
