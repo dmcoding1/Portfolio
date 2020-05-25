@@ -12,6 +12,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html * {
+  visibility: visible;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   overflow: hidden;

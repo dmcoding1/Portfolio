@@ -368,44 +368,18 @@
   }
   
   .nav {
-    left: 0;
-    bottom: 0;
-    top: auto;
-    transform: none;
-    padding: 0;
-    
-    &__links {
-      width: 100%;
-    }
-
-    &__social-links {
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      margin-top: 1rem;      
-      width: 100%;
-    }
-
-    &__social-link {
-      font-size: 1.8rem;
-    }
     
     &__item {
-      border: 3px solid $primary-color;
       
       &:last-child {
         border-left: none;
       }
     }
     
-    &__item:first-child {
+    &__item:nth-child(2) {
       display: none;
     }
-    
-    &__link {
-      line-height: 3;
-      font-size: 1.4rem;
-    }
+
   }
     
   .cursor {

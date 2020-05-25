@@ -13,17 +13,22 @@ window.onload = () => {
     ".projects__carousel-wrapper"
   );
 
+  generateProjects(projectsData);
+
+  const projects = document.getElementsByClassName("projects__project");
+
   if (window.innerWidth <= 700) {
-    generateProjects(projectsData);
+    [...projects].forEach((project, index) => {
+      const imageUrl = projectsData[index].imageUrl;    
+      project.style.backgroundImage = `url(${imageUrl})`;
+      project.style.backgroundPosition = "center center";
+    });
     document.body.classList.remove("loading");
+
     return;
   }
 
   const numberOfProjects = projectsData.length;
-
-  generateProjects(projectsData);
-
-  const projects = document.getElementsByClassName("projects__project");
 
   let projectsOrder = [...projects];
 
