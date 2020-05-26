@@ -197,6 +197,7 @@ window.onload = () => {
 
   function setProjectActive() {
     [...projects].forEach((project) => {
+      project.blur();
       project.classList.remove("active");
     });
   }
