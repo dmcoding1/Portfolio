@@ -5,7 +5,11 @@ import registerSW from "../scripts/swRegistration";
 import "./home.scss";
 import "../font/font.scss";
 
-window.onload = () => {
+window.addEventListener("DOMContentLoaded", init);
+
+registerSW();
+
+function init() {
   const letterContainer = document.querySelector(".header__title");
 
   divideTextInNode(letterContainer);
@@ -62,6 +66,7 @@ window.onload = () => {
     if (e.target.classList.contains("header__letter"))
       e.target.classList.add("header__letter--big");
   }
-};
+}
 
-registerSW();
+
+

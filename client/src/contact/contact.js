@@ -1,12 +1,18 @@
+import { load } from 'recaptcha-v3';
+
 import "../scripts/cursor";
 import "../scripts/nav";
 import registerSW from "../scripts/swRegistration";
+import { hostname } from "../config";
 
 import "./contact.scss";
 import "../font/font.scss";
 
+window.addEventListener("DOMContentLoaded", init);
 
-window.onload = () => {
+registerSW();
+
+function init() {
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const message = document.getElementById("message");
@@ -25,34 +31,37 @@ window.onload = () => {
 
     verify(messageData);
   }
-};
 
-function verify(data) {
-  grecaptcha
-    .execute("6LcbiuIUAAAAAHI5QSoY5HNdSs_I-QQ8q6ZUqnAf", { action: "homepage" })
-    .then(token => {
-      data.captcha = token;
-      sendMessage(data);
+  function verify(data) {
+
+    load("6LcbiuIUAAAAAHI5QSoY5HNdSs_I-QQ8q6ZUqnAf")
+      .then((recaptcha) => {
+        recaptcha.execute("homepage").then((token) => {
+            data.captcha = token;
+            sendMessage(data);
+          })
+      })
+      .catch(err => console.error(err));
+  }
+  
+  function sendMessage(data) {
+    fetch(`${hostname}/message`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
     })
-    .catch(err => console.error(err));
+      .then(() => {
+        window.location.href = "/";
+        name.value = "";
+        email.value = "";
+        message.value = "";
+      })
+      .catch(err => console.error(err));
+  }
 }
 
-function sendMessage(data) {
-  fetch("http://localhost:4000/message", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  })
-    .then(() => {
-      window.location.href = "http://localhost:4000/";
-      name.value = "";
-      email.value = "";
-      message.value = "";
-    })
-    .catch(err => console.error(error));
-}
 
 
-registerSW();
+

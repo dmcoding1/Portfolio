@@ -7,8 +7,12 @@ import registerSW from "../scripts/swRegistration";
 import "./projects.scss";
 import "../font/font.scss";
 
-window.onload = () => {
+window.addEventListener("load", init);
+window.addEventListener("resize", init);
 
+registerSW();
+
+function init() {
   const projectsContainer = document.querySelector(
     ".projects__carousel-wrapper"
   );
@@ -244,6 +248,4 @@ window.onload = () => {
   function translateToPosition(project, { x, y, z }) {
     project.style.transform = `perspective(400px) translate3d(${x}, ${y}, ${z})`;
   }
-};
-
-registerSW();
+}
