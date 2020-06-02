@@ -1,5 +1,2 @@
-/server/config.js
-/server/node_modules
-/client/node_modules
-/client/dist
-/client/src/config.js
+/node_modules
+/dist

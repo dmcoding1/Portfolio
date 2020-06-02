@@ -1,0 +1,1 @@
+export const hostname = process.env.HOSTNAME || "//localhost:4000";
