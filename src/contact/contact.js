@@ -1,4 +1,4 @@
-import "../scripts/cursor";
+// import "../scripts/cursor";
 import "../scripts/nav";
 import registerSW from "../scripts/swRegistration";
 

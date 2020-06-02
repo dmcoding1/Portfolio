@@ -3,6 +3,10 @@
 @import '../styles/nav';
 @import '../styles/cursor';
 
+*, *::before, *::after {
+  cursor: auto;
+}
+
 .btn {
   position: relative;
   margin: 2rem;
