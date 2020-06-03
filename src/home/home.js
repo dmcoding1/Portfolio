@@ -62,6 +62,7 @@ function init() {
   }
 
   function showBigLetter(e) {
+    if (e.target.tagName === "A" || e.target.parentNode.tagName === "A") return;
     letters.forEach((letter) => letter.classList.remove("header__letter--big"));
     if (e.target.classList.contains("header__letter"))
       e.target.classList.add("header__letter--big");
