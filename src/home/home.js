@@ -18,6 +18,8 @@ function init() {
 
   letters[0].classList.add("header__letter--big");
 
+  letterContainer.classList.add("animate");
+
   document.body.addEventListener("click", (e) => {
     showBigLetter(e);
   });
@@ -28,22 +30,31 @@ function init() {
     }
   });
 
-  function detectLeftButton(e) {
-    if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) {
-      return false;
-    } else if ("buttons" in event) {
-      return e.buttons === 1;
-    } else if ("which" in event) {
-      return e.which === 1;
-    } else {
-      return e.button == 1 || e.type == "click";
-    }
+  function showBigLetter(e) {
+    if (e.target.tagName === "A" || e.target.parentNode.tagName === "A") return;
+    letters.forEach((letter) => letter.classList.remove("header__letter--big"));
+    if (e.target.classList.contains("header__letter"))
+      e.target.classList.add("header__letter--big");
   }
+}
 
-  function divideTextInNode(htmlNode) {
-    const headerTitleWords = htmlNode.textContent.trim().split(" ");
+function detectLeftButton(e) {
+  if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) {
+    return false;
+  } else if ("buttons" in event) {
+    return e.buttons === 1;
+  } else if ("which" in event) {
+    return e.which === 1;
+  } else {
+    return e.button == 1 || e.type == "click";
+  }
+}
 
-    const headerTitleHtml = headerTitleWords.map((word) => {
+function divideTextInNode(htmlNode) {
+  const headerTitleWords = htmlNode.textContent.trim().split(" ");
+
+  const headerTitleHtml = headerTitleWords
+    .map((word) => {
       const letters = word.split("");
 
       const wordHTML = letters.reduce((html, character) => {
@@ -54,20 +65,10 @@ function init() {
         }
       }, "");
 
-      return `<span class="header__word">${wordHTML}</span>`
-    }).join(" ");
+      return `<span class="header__word">${wordHTML}</span>`;
+    })
+    .join(" ");
 
-    htmlNode.textContent = "";
-    htmlNode.innerHTML = headerTitleHtml;
-  }
-
-  function showBigLetter(e) {
-    if (e.target.tagName === "A" || e.target.parentNode.tagName === "A") return;
-    letters.forEach((letter) => letter.classList.remove("header__letter--big"));
-    if (e.target.classList.contains("header__letter"))
-      e.target.classList.add("header__letter--big");
-  }
+  htmlNode.textContent = "";
+  htmlNode.innerHTML = headerTitleHtml;
 }
-
-
-
