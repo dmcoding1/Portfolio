@@ -6,7 +6,7 @@ const projectsData = [
     description:
       "Restaurant website with table reservation module. Scroll animations made with Intersection Observer API.",
     imageUrl: "../images/restaurant.jpg",
-    link: "http://51.178.42.224:3100/",
+    link: "https://fresh-italian-restaurant.netlify.app/",
     githubLink: "https://github.com/dmcoding1/Restaurant",
     figmaLink:
       "https://www.figma.com/proto/ekrrtTF8YWDEqGQi6JHAtq/Restaurant?node-id=137%3A2&scaling=min-zoom",
@@ -61,9 +61,9 @@ const projectsData = [
     title: "Quotes App",
     label: "Go to Quotes App",
     description:
-      "App displays random quote from database, with searching quote by author and adding quote to database features.",
+      "App displays random quote from database, with searching quote by author and adding quote to database features. The backend is on heroku so it may take some time to start working.",
     imageUrl: "../images/quotes.jpg",
-    link: "http://51.178.42.224:5000/",
+    link: "https://dm-quotes-app.netlify.app/",
     githubLink: "https://github.com/dmcoding1/Quotes-Application",
     figmaLink:
       "https://www.figma.com/proto/xjKt0pgGfAvyY1zoe0ika1/Quotes?node-id=1%3A2&scaling=scale-down",
