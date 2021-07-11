@@ -78,6 +78,25 @@ const projectsData = [
       "webpack",
     ],
   },
+  {
+    id: 5,
+    title: "Warriors App",
+    label: "Go to Warriors App",
+    description:
+      "Simple SPA made as a coding assignment for job interview. Uses React Hooks and Context API.",
+    imageUrl: "../images/warriors.jpg",
+    link: "https://warriors-app.netlify.app/",
+    githubLink: "https://github.com/dmcoding1/warriors-app",
+    tools: [
+      "html5",
+      "css3",
+      "javascript",
+      "react",
+      "react hooks",
+      "context API",
+      "styled-components",
+    ],
+  },
 ];
 
 export default projectsData;
