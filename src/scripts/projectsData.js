@@ -4,7 +4,7 @@ const projectsData = [
     title: "Fresh Italian Restaurant",
     label: "Go to Fresh Italian Restaurant Website",
     description:
-      "Restaurant website with table reservation module. Scroll animations made with Intersection Observer API.",
+      "Restaurant website with table reservation module. Navbar animations made with Intersection Observer API.",
     imageUrl: "../images/restaurant.jpg",
     link: "https://fresh-italian-restaurant.netlify.app/",
     githubLink: "https://github.com/dmcoding1/Restaurant",
@@ -61,7 +61,7 @@ const projectsData = [
     title: "Quotes App",
     label: "Go to Quotes App",
     description:
-      "App displays random quote from database, with searching quote by author and adding quote to database features. The backend is on heroku so it may take some time to start working.",
+      "App displays random quote from database, with custom autocomplete searching quote by author and adding quote to database features. The backend is on heroku so it may take some time to start working.",
     imageUrl: "../images/quotes.jpg",
     link: "https://dm-quotes-app.netlify.app/",
     githubLink: "https://github.com/dmcoding1/Quotes-Application",
@@ -83,7 +83,7 @@ const projectsData = [
     title: "Warriors App",
     label: "Go to Warriors App",
     description:
-      "Simple SPA made as a coding assignment for job interview. Uses React Hooks and Context API.",
+      "Simple SPA made as a coding assignment for job interview. Build with React Hooks and Context API.",
     imageUrl: "../images/warriors.jpg",
     link: "https://warriors-app.netlify.app/",
     githubLink: "https://github.com/dmcoding1/warriors-app",
