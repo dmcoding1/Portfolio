@@ -83,7 +83,7 @@ const projectsData = [
     title: "Warriors App",
     label: "Go to Warriors App",
     description:
-      "Simple SPA made as a coding assignment for job interview. Build with React Hooks and Context API.",
+      "Simple SPA made as a coding assignment for job interview. Built with React Hooks and Context API.",
     imageUrl: "../images/warriors.jpg",
     link: "https://warriors-app.netlify.app/",
     githubLink: "https://github.com/dmcoding1/warriors-app",
